@@ -1,3 +1,2 @@
 class Concert < ApplicationRecord
-
 end
