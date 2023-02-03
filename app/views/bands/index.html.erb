@@ -1,0 +1,8 @@
+<h1>Bands</h1>
+
+<% @bands.each do |band|%>
+  <h3><%= band.band_name %></h3>
+   <li> Headliner? : <%= band.headliner %></li>
+   <li> Members : <%= band.members %></li>
+   <li> Concert : <%= band.concerts_id %></li>
+<%end%>
