@@ -21,8 +21,8 @@ ActiveRecord::Schema.define(version: 2023_02_02_235300) do
     t.integer "members"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "concerts_id"
-    t.index ["concerts_id"], name: "index_bands_on_concerts_id"
+    t.bigint "concert_id"
+    t.index ["concert_id"], name: "index_bands_on_concert_id"
   end
 
   create_table "concerts", force: :cascade do |t|
@@ -33,5 +33,5 @@ ActiveRecord::Schema.define(version: 2023_02_02_235300) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "bands", "concerts", column: "concerts_id"
+  add_foreign_key "bands", "concerts"
 end
