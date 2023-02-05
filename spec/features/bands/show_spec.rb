@@ -2,7 +2,7 @@ require 'rails_helper'
 
 
 RSpec.describe 'concert show page' do 
-  it 'displays band and band attributes' do
+  it 'displays bands and band attributes' do
     concert = Concert.create!(name: "RiotFest", capacity: 500, sold_out: false)
     concert2 = Concert.create!(name: "RockVill 2023", capacity: 900, sold_out: true)
     band = Band.create(band_name: "Chon", headliner: false, members: 5, concert_id: concert.id )

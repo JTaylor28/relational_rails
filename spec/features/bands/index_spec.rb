@@ -21,4 +21,11 @@ RSpec.describe " bands index page" do
      
     end
   end
+
+  it "has a link to to this page on every page" do
+    visit "/bands"
+    click_on "All Bands"
+
+    expect(current_path).to eq("/bands")
+  end
 end
