@@ -1,5 +1,6 @@
-<h1><%= @concert.name%></h1>
 
+<h1><%= @concert.name%></h1>
+<%= link_to "#{@concert.name} line-up!", "/concerts/#{@concert.id}/bands" %>
 <p> Capacity: <%= @concert.capacity%></p>
 <p> Sold out?: <%= @concert.sold_out%></p>
-<p> Number of Bands <%= @concert.number_of_bands %></p>
+<p> Number of Bands: <%= @concert.number_of_bands %></p>
