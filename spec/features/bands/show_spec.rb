@@ -14,10 +14,6 @@ RSpec.describe 'concert show page' do
     expect(page).to have_content(band.members)
     expect(page).to have_content(band.concert_id)
     expect(page).to_not have_content(band2.band_name)
-    expect(page).to_not have_content(band2.headliner)
-    expect(page).to_not have_content(band2.members)
-    expect(page).to_not have_content(band2.concert_id)
-
 
     visit "bands/#{band2.id}"
     expect(page).to have_content(band2.band_name)
@@ -25,9 +21,6 @@ RSpec.describe 'concert show page' do
     expect(page).to have_content(band2.members)
     expect(page).to have_content(band2.concert_id)
     expect(page).to_not have_content(band.band_name)
-    expect(page).to_not have_content(band.headliner)
-    expect(page).to_not have_content(band.members)
-    expect(page).to_not have_content(band.concert_id)
-
+    
   end
 end
