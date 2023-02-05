@@ -26,5 +26,12 @@ RSpec.describe " Concert index page" do
       visit "/concerts"
       expect(this).to appear_before(that)
     end
+    
+    it "has a link back to this page on every page" do
+      visit "/concerts"
+      click_on "All Concerts"
+  
+      expect(current_path).to eq("/concerts")
+    end
   end
 end
