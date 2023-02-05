@@ -20,12 +20,12 @@ RSpec.describe " bands index page" do
      expect(page).to have_content(@band_2.concert_id)
      
     end
-  end
 
-  it "has a link to to this page on every page" do
-    visit "/bands"
-    click_on "All Bands"
-
-    expect(current_path).to eq("/bands")
+    it "has a link back to this page on every page" do
+      visit "/bands"
+      click_on "All Bands"
+  
+      expect(current_path).to eq("/bands")
+    end
   end
 end
