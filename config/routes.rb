@@ -8,5 +8,7 @@ Rails.application.routes.draw do
   get '/bands/:id', to: 'bands#show'
   get '/concerts/:concert_id/bands', to: 'concerts/bands#index'
   post 'concerts', to: 'concerts#create'
+  get '/concerts/:id/edit', to: 'concerts#edit'
+  patch 'concerts/:id', to: 'concerts#update'
 
 end
