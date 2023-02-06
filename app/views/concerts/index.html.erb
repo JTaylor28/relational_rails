@@ -1,5 +1,7 @@
 <h1>concerts</h1>
 
+<%= link_to 'New Concert', '/concerts/new' %>
+
 <% @concerts.each do |concert| %>
   <p><%= concert.name %></p>
   <p> created at: <%= concert.created_at %></p>
