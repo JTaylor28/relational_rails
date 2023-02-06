@@ -1,0 +1,9 @@
+<%= form_with url: "/concerts/#{@concert.id}", method: :Patch, local: true do |form| %>
+  <%= form.label :name %>
+ <p> <%= form.text_field :name %> </p>
+  <%= form.label :capacity %>
+ <p> <%= form.text_field :capacity %> </p>
+  <%= form.label :sold_out? %>
+ <p> <%= form.text_field :sold_out? %> </p>
+  <%= form.submit 'Update' %>
+<% end %>
