@@ -13,7 +13,6 @@ class ConcertsController < ApplicationController
   end
 
   def create
-    # Concert.create(name: params[:name], capacity: params[:capacity], sold_out: params[:sold_out])
     Concert.create(concert_params)
     redirect_to '/concerts'
   end

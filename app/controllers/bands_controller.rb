@@ -1,7 +1,7 @@
 class BandsController < ApplicationController
 
   def index
-    @bands = Band.all
+    @bands = Band.headliners_only
   end
 
   def show
