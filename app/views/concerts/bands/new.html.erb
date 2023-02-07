@@ -1,0 +1,9 @@
+<%= form_with url: "/concerts/#{@concert.id}/bands", method: :post, local: true do |form| %>
+  <%= form.label :band_name %>
+ <p> <%= form.text_field :band_name %> </p>
+  <%= form.label :headliner %>
+ <p> <%= form.text_field :headliner %> </p>
+  <%= form.label :members %>
+ <p> <%= form.text_field :members %> </p>
+  <%= form.submit 'Create Band' %>
+<% end %>
