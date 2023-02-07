@@ -13,7 +13,7 @@ RSpec.describe " Concert index page" do
 
   describe " As a user " do
     describe " when I visit concerts index " do
-      it "shows a list of concerts" do
+      it " I see a list of concerts" do
         visit "/concerts"
       expect(page).to have_content(@concert_1.name)
       expect(page).to have_content(@concert_2.name)
@@ -22,16 +22,24 @@ RSpec.describe " Concert index page" do
       expect(page).to_not have_content("somethings else")
       end
 
-      it "shows concerts in descending order" do
+      it " I see a list of concerts in descending order" do
         visit "/concerts"
         expect(this).to appear_before(that)
       end
       
-      it "has a link back to this page on every page" do
+      it " I see a link back to this page on every page" do
         visit "/concerts"
         click_on "All Concerts"
     
         expect(current_path).to eq("/concerts")
+      end
+
+      it " I see a links to create a new concert " do 
+        visit "/concerts"
+      
+        click_link "Create Concert"
+      
+        expect(current_path).to eq("/concerts/new") 
       end
     end
   end

@@ -4,15 +4,7 @@ RSpec.describe "New Concert" do
   describe "As a user" do
     describe " When I visit the concert form from clicking the 'Create Concert' button" do
 
-      it " links to a new page from the concerts index page " do 
-        visit "/concerts"
-
-        click_link "Create Concert"
-
-        expect(current_path).to eq("/concerts/new") 
-      end
-
-      it "can create a new concert" do 
+      it " I see a form with all concert fields and a Create concert button" do 
 
         visit "/concerts/new"
 
@@ -27,3 +19,4 @@ RSpec.describe "New Concert" do
     end
   end
 end 
+
