@@ -9,13 +9,10 @@ RSpec.describe " bands index page" do
   end
   
   describe " As a user" do
-    describe " When i visit bands index" do
-      it "shows a list of bands and their attributes" do
+    describe " When i visit the bands index page" do
+      it " I see a list of bands and their attributes" do
         visit "/bands"
-        expect(page).to have_content(@band_1.band_name)
-        expect(page).to have_content(@band_1.headliner)
-        expect(page).to have_content(@band_1.members)
-        expect(page).to have_content(@band_1.concert_id)
+
         expect(page).to have_content(@band_2.band_name)
         expect(page).to have_content(@band_2.headliner)
         expect(page).to have_content(@band_2.members)
@@ -23,11 +20,22 @@ RSpec.describe " bands index page" do
       
       end
 
-      it "has a link back to this page on every page" do
+      it " I see a link back to this page on every page" do
         visit "/bands"
         click_on "All Bands"
     
         expect(current_path).to eq("/bands")
+      end
+
+      it " I see the list of bands are only headliners" do 
+        visit "/bands"
+
+        expect(page).to have_content(@band_2.band_name)
+        expect(page).to have_content(@band_2.headliner)
+        expect(page).to have_content(@band_2.members)
+        expect(page).to have_content(@band_2.concert_id)
+
+        expect(page).to_not have_content(@band_1.band_name)
       end
     end
   end
