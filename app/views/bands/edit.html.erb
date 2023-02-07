@@ -1,0 +1,9 @@
+<%= form_with url: "/bands/#{@band.id}", method: :patch, local: true do |form| %>
+  <%= form.label :band_name, "Band Name" %>
+ <p> <%= form.text_field :band_name %> </p>
+  <%= form.label :headliner, "Headliner" %>
+ <p> <%= form.text_field :headliner %> </p>
+  <%= form.label :members, "Members" %>
+ <p> <%= form.text_field :members %> </p>
+  <%= form.submit 'Update' %>
+<% end %>

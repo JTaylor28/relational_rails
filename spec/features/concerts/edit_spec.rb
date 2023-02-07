@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'Update Concert' do
 
   before do
-    @concert_1 = Concert.create(name: "Test Concert", capacity: 400, sold_out: false )
+    @concert_1 = Concert.create!(name: "Test Concert", capacity: 400, sold_out: false )
   end 
   
   describe "As a user" do
@@ -23,6 +23,9 @@ RSpec.describe 'Update Concert' do
 
         expect(current_path).to eq("/concerts/#{@concert_1.id}")
         expect(page).to have_content('Test Concert')
+        expect(page).to have_content('400')
+        expect(page).to have_content('false')
+
       end
     end
   end 

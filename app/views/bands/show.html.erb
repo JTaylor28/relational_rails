@@ -1,5 +1,8 @@
 <h1><%= @band.band_name%></h1>
 
+
 <p> headliner: <%= @band.headliner%></p>
 <p> members: <%= @band.members%></p>
 <p> concert: <%= @band.concert_id %>
+
+<p><%=  link_to "Update Band", "/bands/#{@band.id}/edit"%></p>
