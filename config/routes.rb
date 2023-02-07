@@ -12,4 +12,6 @@ Rails.application.routes.draw do
   patch 'concerts/:id', to: 'concerts#update'
   get '/concerts/:concert_id/bands/new', to: 'concerts/bands#new'
   post 'concerts/:concert_id/bands', to: 'concerts/bands#create'
+  get "/bands/:id/edit", to: 'bands#edit'
+  patch '/bands/:id', to: 'bands#update'
 end
