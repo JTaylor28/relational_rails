@@ -11,27 +11,28 @@ RSpec.describe " Concert index page" do
   let(:this) {"<p>#{@concert_3.name}</p>"}
   let(:that)  {"<p>#{@concert_1.name}</p>"}
 
+  describe " As a user " do
+    describe " when I visit concerts index " do
+      it "shows a list of concerts" do
+        visit "/concerts"
+      expect(page).to have_content(@concert_1.name)
+      expect(page).to have_content(@concert_2.name)
+      expect(page).to have_content(@concert_3.name)
+      expect(page).to have_content(@concert_1.created_at)
+      expect(page).to_not have_content("somethings else")
+      end
 
-  describe " GET /index" do
-    it "shows a list of concerts" do
-      visit "/concerts"
-     expect(page).to have_content(@concert_1.name)
-     expect(page).to have_content(@concert_2.name)
-     expect(page).to have_content(@concert_3.name)
-     expect(page).to have_content(@concert_1.created_at)
-     expect(page).to_not have_content("somethings else")
-    end
-
-    it "shows concerts in descending order" do
-      visit "/concerts"
-      expect(this).to appear_before(that)
-    end
+      it "shows concerts in descending order" do
+        visit "/concerts"
+        expect(this).to appear_before(that)
+      end
+      
+      it "has a link back to this page on every page" do
+        visit "/concerts"
+        click_on "All Concerts"
     
-    it "has a link back to this page on every page" do
-      visit "/concerts"
-      click_on "All Concerts"
-  
-      expect(current_path).to eq("/concerts")
+        expect(current_path).to eq("/concerts")
+      end
     end
   end
 end
