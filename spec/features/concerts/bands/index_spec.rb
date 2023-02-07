@@ -9,7 +9,7 @@ RSpec.describe "Concert bands index" do
     end
 
     describe "When I visit a concerts band page by clicking line-up!" do
-      it " is displays all the concerts bands and their attributes" do
+      it " I see all the concerts bands and their attributes" do
         
         visit "/concerts/#{@concert_1.id}/bands"
 
@@ -21,6 +21,14 @@ RSpec.describe "Concert bands index" do
         expect(page).to have_content(@band_2.headliner)
         expect(page).to have_content(@band_2.members)
 
+      end
+
+      it " I see a link to add a new band for that concert" do 
+        visit "/concerts/#{@concert_1.id}/bands"
+
+        click_link "Create Band"
+
+        expect(current_path).to eq("/concerts/#{@concert_1.id}/bands/new")
       end
     end
   end

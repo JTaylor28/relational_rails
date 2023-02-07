@@ -11,7 +11,7 @@ RSpec.describe 'concert show page' do
   describe "as a visitor" do 
     describe " when I visit concerts show page" do
   
-      it 'displays concert name and attributes' do
+      it ' I see all concert names and attributes' do
         
         visit "concerts/#{@concert.id}"
         expect(page).to have_content(@concert.name)
@@ -26,11 +26,18 @@ RSpec.describe 'concert show page' do
 
       end
 
-      it "displays link to respected bands" do
+      it " I see a link to the concerts bands" do
         visit "/concerts/#{@concert.id}"
         click_on "#{@concert.name} line-up!"
 
         expect(current_path).to eq("/concerts/#{@concert.id}/bands")
+      end
+
+      it " I see a link to update the concert that will take me to the concert update from" do 
+        visit "/concerts/#{@concert.id}"
+        click_on "Update Concert"
+
+        expect(current_path).to eq("/concerts/#{@concert.id}/edit")
       end
     end 
   end 

@@ -7,8 +7,8 @@ RSpec.describe 'Update Concert' do
   end 
   
   describe "As a user" do
-    describe 'When I visit update concerts page by clicking Update Concert ' do
-      it ' can update a concert' do
+    describe 'When I visit the update concerts page by clicking Update Concert ' do
+      it ' I see a form with fillalbe concert fields, a button that will patch the changes, and redirect me back to the show page ' do
 
         visit "/concerts/#{@concert_1.id}"
 

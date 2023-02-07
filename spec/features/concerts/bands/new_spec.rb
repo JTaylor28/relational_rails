@@ -9,16 +9,9 @@ RSpec.describe "new concert band" do
   end
 
   describe "As a user" do 
-    describe "when I visit the concert band index page" do
-      it " I see a link to add a new concert for that band" do 
-        visit "/concerts/#{@concert_1.id}/bands"
-
-        click_link "Create Band"
-
-        expect(current_path).to eq("/concerts/#{@concert_1.id}/bands/new")
-      end
-
-      it "when I submit the form I see a new band on the concert band index page" do
+    describe "when I visit create new band page" do
+      
+      it " I see a form with fillable band fields, a button that will post those fields, and redirect me back to the concerts band index  " do
         visit "/concerts/#{@concert_1.id}/bands/new"
 
         fill_in 'band_name', with: "Chon"
